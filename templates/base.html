@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/esas.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/footer.css')}}">
+    {% block css %}
+    {% endblock %}
+</head>
+
+
+<body>
+
+    <nav class="d-flex  bg-body border-bottom container-fluid">
+        <div class=" d-flex flex-wrap gap-4 ">
+            <div class="nav me-auto mt-1  ">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="19" fill="currentColor" class="bi bi-bank  " viewBox="0 0 16 16">
+                        <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                    </svg>
+                <li class="nav-item  "><a href="https://www.rabitabank.com/bank-haqqinda/umumi-melumat"
+                        class=" link-body-emphasis px-2 active text-decoration-none  ">Ümumi
+                        məlumat</a></li>
+            </div>
+            <div class="d-flex mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="19" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                    </svg>
+                <div class="nav-item"><a href="https://www.rabitabank.com/filial-ve-bankomatlar/filiallar"
+                        class=" link-body-emphasis px-2 active text-decoration-none">Filial və bankomatlar</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        AZ
+    </button>
+    <ul class="dropdown-menu">
+        <li><button class="dropdown-item" type="button">En</button></li>
+        <li><button class="dropdown-item" type="button">Rus</button></li>
+    </ul>
+</div> -->
+    </nav>
+<div class="navbar-wrapper">
+<div class="navbar">  
+     <div class=" mb-3 border-bottom ">
+        <div class=" container-fluid  d-flex flex-wrap gap-5">
+            <a href="/" class="py-3 d-flex align-items-center mb-3   ">
+                <span class="fs-5 "><img class="mt-1" style="background-color: white;" src="https://www.rabitabank.com/images/rabitebank.svg" width="191"
+                        height="37" alt="Rabitəbank">
+                </span>
+            </a>
+            <div class="py-3 d-grid gap-2 d-md-block ">
+                <button class="btn active ferdi  " type="button"> <i class="fa-solid fa-user"
+                        style="color: #000000;"></i><a class="text-decoration-none ms-2 small"
+                        href="https://www.rabitabank.com/?hl=az"> Fərdi</a></button>
+                <button class="btn biznes btn-light   " type="button"><svg class="bag" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M7 5V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h4a1 0 0 0 0 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4zm10 8v-3h-2v3H9v-3H7v3H4v6h16v-6h-3zM9 3v2h6V3H9z" />
+                        </g>
+                    </svg><a class="text-decoration-none small ms-1" href="https://www.rabitabank.com/biznes">Biznes</a></button>
+            </div>
+            <div class="navb2 d-flex  py-3 gap-3 align-items-center ">
+                <div><button id="phone" class="btn ferdi active rounded-pill align-items-center" type="button"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999z" />
+                            <path
+                                d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5v2zm3.422 5.443a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391l-4.064-3.696z" />
+                        </svg>133</button></div>
+                <div><button style="background-color: #80b554;height: 50px;margin-right: -12px;" type="button"
+                        class="btn btn-primary rounded-3 border-0 text-nowrap w-200 "><img
+                            src="{{url_for('static', filename='images/arrow.png')}}"><a class="text-decoration-none "
+                            style="color: white;" href="https://ib.rabitabank.com/InterBank/#/"> İnternet
+                            Bankçılıq</a></button></div>
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+    
+    
+   <div class="mb-6  d-flex ">
+        <div class=" container-fluid d-flex  gap-3 align-items-center">
+            <a class="nav3" href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler">
+                <p class="py-2 me-3 fs-5 nav3-text"> Kreditlər
+            </a></span></p>
+            </a>
+            <div class="d-flex  ">
+                <img class="mt-3" src="https://www.rabitabank.com/resized/fit24x15/center/pages/229/menu-card-1.png"
+                    height="17px" alt="">
+                <a class="nav3" href="https://www.rabitabank.com/ferdi/kart-sifarisi-kartlar">
+                    <p class=" py-2 ms-3 fs-5 nav3-text">Kartlar</p>
+                </a>
+            </div>
+
+            <a class="nav3" href="{{url_for('emanetler')}}">
+                <p class=" py-2 me-3 fs-5 ms-2 nav3-text  ">Əmanətlər</p>
+            </a>
+
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1 ">
+                <div class="modal-dialog modal-dialog modal-xl">
+                    <div class="d-flex  modal-content">
+                        <div class="align-items-stretch modal-header border-bottom-0  ">
+                            <div class="d-flex flex-column justify-content-between modal-body">
+                                <div class="">
+                                    <h1 class=" fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler">
+                                            Kreditler</a></h1>
+                                    <p class="  fs-" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler/nagd-pul-krediti-rabitabank">
+                                            Nağd pul krediti</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler/ipoteka-krediti">İpoteka
+                                            krediti</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler/lombard-krediti">Lombard
+                                            krediti</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler/mida-xetti-ile-guzestli-ipoteka">"MIDA"xətti
+                                            ilə güzəştli ipoteka</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler">
+                                            Bütün kreditlər</a></p>
+                                </div>
+                                <div>
+                                    <h1 class="fs-5 " id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="{{url_for('kampaniyalar')}}">
+                                            Kampaniyalar</a></h1>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column justify-content-between modal-body ">
+                                <div class="">
+                                    <h1 class="fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kart-sifarisi-kartlar">
+                                            Kartlar</a></h1>
+                                    <p class=" fs-6 text-nowrap" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kart-sifarisi-kartlar/kartmane-debet">Kartmane
+                                            Debet</a></p>
+                                    <p class=" fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kart-sifarisi-kartlar/kartmane-kredit-az">
+                                            Kartmane Kredit</a></p>
+                                    <p class=" fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kart-sifarisi-kartlar/karmane-premium">Kartmane
+                                            Premium</a></p>
+                                </div>
+                                <div>
+                                    <h1 class="fs-5" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/terefdaslar">Tərəfdaşlar</a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between flex-column modal-body text-nowrap">
+                                <div>
+                                    <h1 class="fs-5 mb-4 " id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/pulkocurmeleri-rb"> Pul
+                                            köçürmələri</a></h1>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/pulkocurmeleri-rb/western-union-aze/sertler-ve-xidmetler">
+                                            Western Union</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/pulkocurmeleri-rb/zolotaya-korona-aze/sertler-ve-xidmetler">
+                                            Zolotaya Korona</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/pulkocurmeleri-rb/contact/sertler-ve-xidmetler">
+                                            Contact</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/pulkocurmeleri-rb/barat-aze">
+                                            Barat</a></p>
+                                </div>
+                                <div>
+                                    <a class="text-decoration-none kecitler" href="{{url_for('xeberler')}}">
+                                        <h1 class="fs-5" id="exampleModalToggleLabel">Xəbərlər</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between flex-column modal-body text-nowrap">
+                                <div>
+                                    <h1 class=" fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/onlayn-xidmetler"> Onlayn
+                                            xidmətlər </a></h1>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler">
+                                            Kredit sifarişi</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kart-sifarisi-kartlar/kartmane-debet">
+                                            Kartmane Debet sifarişi</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/onlayn-xidmetler/onlayn-odenisler">
+                                            Onlayn ödənişlər</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://ib.rabitabank.com/Azericard?lang=az&type=1"> Kredit
+                                            ödənişi</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/onlayn-xidmetler/sms-melumatlandirma">
+                                            SMS məlumatlandırma</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/onlayn-xidmetler/onlayn-novbe">
+                                            Onlayn növbə</a></p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between flex-column modal-body ">
+                                <div>
+                                    <h1 class=" fs-5 mb-4 text-nowrap" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/diger-xidmetler"> Digər
+                                            xidmətlər</a></h1>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/pulkocurmeleri-rb"> Sürətli
+                                            pul köçürmələri</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/diger-xidmetler/hesablasma-kassa-emeliyyatlari">
+                                            Hesablaşma-kassa əməliyyatları</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi-musteriler/emanetler-az/saxlanc-seyfleri">
+                                            Saxlanc seyfləri</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/diger-xidmetler/sigorta-xidmetleri">
+                                            Sığorta xidmətləri</a></p>
+                                    <p class="  fs-6" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/filial-ve-bankomatlar/filiallar">
+                                            Xidmət şəbəkəsi</a></p>
+                                </div>
+                            </div>
+                            <div class=" modal-body  border-start text-nowrap">
+                                <div>
+                                    <h1 class=" fs-5 mb-4 " id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/cashback-aze"> Keşbek</a>
+                                    </h1>
+                                    <h1 class=" fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/mobile-banking-az"> Rabita
+                                            Mobile</a></h1>
+                                    <h1 class=" fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/apple-pay-aze"> Apple Pay</a>
+                                    </h1>
+                                    <h1 style="font-family: 'Google Sans', sans-serif;" class=" fs-5 mb-4 "
+                                        id="exampleModalToggleLabel"><a class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/google-pay-az"> Google
+                                            Pay&trade;</a></h1>
+                                    <h1 class=" fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/bankchiliq-lugeti-aze">
+                                            Lüğət</a></h1>
+                                    <h1 class=" fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/rabitabank-blog-aze">
+                                            Bloq</a></h1>
+                                    <h1 class=" fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/rabita-bot"> Rabita Bot</a>
+                                    </h1>
+                                    <h1 class=" fs-5 mb-4" id="exampleModalToggleLabel"><a
+                                            class="kecitler text-decoration-none"
+                                            href="https://www.rabitabank.com/ferdi/kredit-kalkulyatoru"> Kredit
+                                            kalkulyatoru</a></h1>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn  border border-0 rounded-circle mb-2" data-bs-toggle="modal"
+                data-bs-target="#exampleModalToggle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-three-dots  " viewBox="0 0 16 16">
+                    <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                </svg></button>
+        </div>
+
+        <div class="navbar3 py-2 d-flex gap-3 ">
+            <button class="rounded-circle border border-0  mb-2 ms-3 "><i class="fa-sharp fa-solid fa-magnifying-glass"
+                style="color: #000000; "></i></button>
+                <a href="{{url_for('novbe')}}">
+                <button type="button" style="height: 45px; width: 159px;" class="btn btn-dark text-nowrap sm-4 rounded-4"><i class="fa-sharp fa-solid fa-calendar-days " style="color: #ffffff;margin-right: 6px; font-size: large;"></i>
+                    Onlayn növbə</button></a>
+        </div>
+    </div>
+</div>
+</div>
+
+    {% block content %}
+    {% endblock %}
+
+
+<footer class="footer">
+    <div class="containerfooter" style="width: 1400px;margin-left: 30px; text-decoration: none;">
+      <div class="footer__menu">
+        <div class="row">
+          <div class="col-md-2">
+            <p class="footer_title footer_title--clickable ">Fərdi müştərilər
+              
+            </p>
+            <div>
+              <div class="footer_link">
+                <a  
+                  href="https://www.rabitabank.com/ferdi/kart-sifarisi-kartlar"
+                  >Kartmane</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler"
+                  >Kreditlər</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/ferdi-musteriler/emanetler-az"
+                  >Əmanətlər</a
+                >
+              </div>
+              <div class="footer_link">
+                <a  href="https://www.rabitabank.com/ferdi/onlayn-xidmetler"
+                  >Onlayn xidmətlər</a
+                >
+              </div>
+              <div class="footer_link">
+                <a  href="https://www.rabitabank.com/ferdi/kampaniyalar"
+                  >Kampaniyalar</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="footer_link" class="col-md-2">
+            <p class="footer_title footer_title--clickable">
+              Biznes müştərilər
+            </p>
+            <div class="footer_link">
+              <div class="footer_link">
+                <a
+                   href="https://www.rabdivabank.com/biznes/emanetler-biznes-aze"
+                  >Əmanətlər</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/biznes/kreditler-biznes-aze"
+                  >Kreditlər</a
+                >
+              </div>
+              <div class="footer_link">
+                <a  href="https://www.rabitabank.com/biznes/kartlar"
+                  >Plastik kartlar</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/biznes/bank-xidmetleri-biznes-aze"
+                  >Bank xidmətləri</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/biznes/biznes-kampaniyalar-aze"
+                  >Kampaniyalar</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="footer_link" class="col-md-2">
+            <p class="footer_title footer_title--clickable">
+              Bank haqqında
+            </p>
+            <div class="footer_link">
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/bank-haqqinda/umumi-melumat"
+                  >Ümumi məlumat</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/bank-haqqinda/missiya-ve-baxis"
+                  >Strateji baxış və missiya</a
+                >
+              </div>
+              <div class="footer_link">
+                <a  href="https://www.rabitabank.com/bank-haqqinda/rehberlik"
+                  >Rəhbərlik</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/bank-haqqinda/teskilati-struktur"
+                  >Təşkilati struktur</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/bank-haqqinda/banklararasi-biznes"
+                  >Banklararası biznes</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/bank-haqqinda/risklerin-idare-edilmesi"
+                  >Risklərin idarə edilməsi</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="footer_link" class="col-md-2">
+            <p class="footer_title footer_title--clickable">Digər</p>
+            <div class="footer_link">
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/diger/yuklemeler-ve-destek"
+                  >Yükləmələr və dəstək</a
+                >
+              </div>
+              <div class="footer_link">
+                <a  href="https://www.rabitabank.com/ferdi/tender-elanlari"
+                  >Tender elanları</a
+                >
+              </div>
+              <div class="footer_link">
+                <a  href="https://www.rabitabank.com/diger/hesabatlar"
+                  >Hesabatlar</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/diger/sikayet-ve-teklifler"
+                  >Şikayət və təkliflər</a
+                >
+              </div>
+              <div class="footer_link">
+                <a  href="https://www.rabitabank.com/diger/faq-az">F.A.Q</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer_link" class="col-md-2">
+            <p class="footer_title footer_title--clickable">
+              İnsan resursları
+            </p>
+            <div class="footer_link">
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/insan-resurslari/umumi-melumat"
+                  >Ümumi məlumat</a
+                >
+              </div>
+              <div class="footer_link">
+                <a
+                   href="https://www.rabitabank.com/insan-resurslari/vakansiyalar"
+                  >Vakansiyalar</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="footer_link" class="col-md-2">
+            <p class="footer__title">Baş ofis</p>
+            <div class="footer_link">
+              <div class="footer_link">
+                <a
+                   href="https://www.google.com/maps/place/Rabitabank+OJSC/@40.3799207,49.8563931,17z/data=!3m1!4b1!4m5!3m4!1s0x40307da821970ec7:0x578053c819fc0c80!8m2!3d40.379748!4d49.8586451"
+                  >Azərbaycan, Bakı şəh., AZ 1010, 28 May küç. 33</a
+                >
+              </div>
+              <div class="footer_link">Tel.: <a  href="tel:994125984488">(994 12) 598 44 88</a></div>
+              <div class="footer_link">Fax.: <a  href="fax:994125984488">(994 12) 598 44 88</a></div>
+              <div class="footer_link">Teleks: <a  href="telex:142453">142453 RSKBAI</a></div>
+              <div class="footer_link">
+                <a  href="mailto:133@rabitabank.com">133@rabitabank.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__contacts mt-4" style="background-color: #f1f4ee; padding: 24px; border-radius: 12px;">
+        <div class="footer__apps d-none d-md-flex">
+          <div>
+            <a
+              target="_blank"
+              href="https://apps.apple.com/app/rabitabank-mobile/id1457972986"
+              aria-label="app store"
+            >
+              <img
+                src="https://www.rabitabank.com/images/svg-icons/apple_1.svg"
+                width="157"
+                height="48"
+                alt="App store"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.rabitabank"
+              aria-label="google play"
+            >
+              <img
+                src="https://www.rabitabank.com/images/svg-icons/google.svg"
+                width="157"
+                height="48"
+                alt="Google play"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              href="https://appgallery.huawei.com/app/C103228365"
+              aria-label="huawei app gallery"
+            >
+              <img
+                src="https://www.rabitabank.com/images/svg-icons/appgallery.svg"
+                width="157"
+                height="48"
+                alt="AppGallery"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="footer__links"></div>
+        <div class="footer__socials">
+         
+        </div>
+      </div>
+      <div class="footer__bottom d-flex justify-content-between  mt-4">
+        <p>
+          Rabitəbank ASC Azərbaycan Mərkəzi Bankın 136 saylı lisenziyası <br>
+          əsasında fəaliyyət göstərir. © Rabitəbank 2023
+        </p>
+        <div class="d-flex">
+          <div>
+            <a
+              aria-label="site link"
+              target="_blank"
+              href="https://infobank.az/"
+            >
+              <img
+                src="https://www.rabitabank.com/images/infobank.png"
+                width="115"
+                height="26"
+                alt="İnfobank"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              aria-label="site link"
+              target="_blank"
+              href="https://bizimpullar.az/"
+            >
+              <img
+                src="https://www.rabitabank.com/images/maliyye-portali.png"
+                width="75"
+                height="40"
+                alt="Maliyyə Portalı"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/esas.js')}}"></script>
+
+    {% block js %}
+    {% endblock %}
+
+</body>
+
+</html>

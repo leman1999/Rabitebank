@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/emanetler.css')}}">
+{% endblock %}
+{% block content %}
+<h1 class="mt-5 mb-5 ms-3">Əmanətlər</h1>
+
+<div class="emanet-row row row-cols-1 row-cols-md-2 ">
+  {% for e in ema %}
+  <div class="col-md-6  ">
+    <a href="https://www.rabitabank.com/ferdi-musteriler/emanetler-az/universal-emanet1az">
+    <div class="card1  border-0 ">
+      <div class="card-body  ">
+        <h4 class="card-title mb-2 no-underline "><b>{{e.basliq}}</b></h4>
+        <p class="card-text" style="color: gray;">{{e.description}}
+        </p>
+        <div class="d-flex justify-content-between">
+          <div>
+            <div class="d-flex ">
+              <div class="">
+                <p class="card-text" style="color: gray;">Müddəti</p>
+                <h4><b>{{e.muddet}}</b></h4>
+              </div>
+              <div class="">
+                <p class="card-text " style="color: gray;">Faiz dərəcəsi</p>
+                <h4 class="ms-3"><b>{{e.faiz}}</b></h4>
+              </div>
+            </div>
+            <div>
+              <p class="card-text" style="color: gray;">Valyuta</p>
+              <h4><b>{{e.valyuta}}</b></h4>
+            </div>
+          </div>
+          <img class="img-card emanet-img  " src="{{e.img}}"  alt="">
+        </div>
+      </div>
+    </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class=" mb-3">
+  <div class="cardd ms-4  rounded-5 border-0  ">
+    <div class="card-body  ms-4 mt-5">
+      <div class="d-flex justify-content-evenly align-items-center">
+        <div>
+          <h3 class="card-title mb-3"><b>Saxlanc seyfləri</b></h3>
+          <p class="card-text fs-5">Rabitəbank qiymətlərinin saxlanması üçün saxlanc <br> seyflərini sizə sərfəli
+            şərtlərlə təqdim edir!</p>
+        </div>
+        <div class="img-card">
+
+          <img class="seyf" src="https://www.rabitabank.com/resized/resize0x178/center/pages/140/saxlanc-seyf-1.png"
+            height="200px" width="200px" alt="">
+
+        </div>
+        <div>
+          <button type="button" class="saxlanc btn btn-primary px-4 py-3 rounded-4 text-nowrap">Daha ətraflı</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row-12 mt-5 d-flex  ">
+  <div class="col-8 sorgu-header rounded-5 container  ">
+    <form method="POST">
+      {{ form.csrf_token }}
+      <h3 class="m-5 ms-4 "><b>Əmanət üçün sorğu göndər</b></h3>
+      <div class="container ">
+        <p class="small" style="color: gray;">Əmanətin növü</p>
+        <div class="d-flex gap-5">
+          <div>
+            <input type="radio" class="sorgu btn-check" name="deposit" id="Universal Əmanət" value="Universal Əmanət" autocomplete="off" checked>
+            <label class="btn sorgu-nov form-control" for="Universal Əmanət">
+              <h6 class="small mt-1 ">Universal əmanət</h6>
+            </label>
+            <div class="d-flex gap-2">
+              <h7 class="small mt-1 mb-1">Adınız</h7>
+              <h7 style="color: red;"><b>*</b></h7>
+            </div>
+            <input  class=" form-control sorgu-int "  name="name" type="text">
+            
+          </div>
+          <div>
+            <input type="radio" class=" sorgu btn-check" name="deposit" id="Uşaq Yığım Əmanəti" value="Uşaq Yığım Əmanəti" autocomplete="off">
+            <label class="btn sorgu-nov form-control" for="Uşaq Yığım Əmanəti">
+              <h6 class="small mt-1 ">Uşaq yığım əmanəti</h6>
+            </label>
+            <div class="d-flex gap-2">
+              <h7 class="small mb-1 mt-1">Soyadınız</h7>
+              <h7 style="color: red;"><b>*</b></h7>
+            </div>
+             <input class="form-control sorgu-int" name="surname" type="text">
+          </div>
+          <div>
+            <input type="radio" class="sorgu btn-check" name="deposit" id="Saxlanc Seyfləri" value="Saxlanc Seyfləri" autocomplete="off">
+            <label class="btn sorgu-nov form-control" for="Saxlanc Seyfləri">
+              <h6 class="small mt-1 ">Saxlanc seyfləri</h6>
+            </label>
+            <div class="d-flex gap-2">
+              <h7 class="small mb-1 mt-1">Mobil nömrəniz </h7>
+              <h7 style="color: red;"><b>*</b></h7>
+            </div>
+            <div class="input-group mb-3">
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                data-bs-toggle="dropdown" aria-expanded="false">050
+              </button>
+              <ul class="dropdown-menu sorgu-form">
+                <li><a class="dropdown-item" onclick="selectOption(this)">050</a></li>
+                <li><a class="dropdown-item" onclick="selectOption(this)">055</a></li>
+                <li><a class="dropdown-item" onclick="selectOption(this)">070</a></li>
+              </ul>
+              <!-- <input type="text" class="form-control sorgu-form" placeholder="123 45 32" id="selected-option"
+                name="phone"> -->
+              
+              <input class="form-control sorgu-int"  id="phoneNumber"  placeholder="xxx xx xx"   name="phone" type="text" onkeyup="formatPhoneNumber()">
+              
+            </div>
+          </div>
+        </div>
+        <p class="small" style="color: red;">* Məlumatları Azərbaycan dilində daxil edin.</p>
+        <button type="submit" class="sorgu-sifariset  btn  border-0 rounded-3 ">Sifariş et</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-4 universal ">
+    <div class="d-flex flex-column universal_text ">
+      <h3>Universal əmanət</h3>
+      <p class="small">Pulunuz artmaqla yanaşı həm də qazanılan fazilərin götürülməsində geniş seçim imkanınız olacaq!
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+  {% block js %}
+  <script src="{{url_for('static', filename='js/emanetler.js')}}"></script>
+  {% endblock %}

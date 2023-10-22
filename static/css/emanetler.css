@@ -1,0 +1,97 @@
+
+.saxlanc{
+    background-color:#262f40;
+    color: white;
+    border-color: black;
+    
+}
+.saxlanc:hover{
+    background-color: white;
+    color: #262f40;
+    border-color: rgb(2, 1, 36);
+}
+.cardd{
+    background-color: #cbe5e5;
+    margin-right: 20px;
+    
+
+}
+
+
+.sorgu.btn-check:checked +.btn
+{
+  background-color: black;
+  color: white;
+ 
+}
+
+.sorgu-nov{
+    background-color: white;
+    border: none;
+    height: 45px;
+}
+
+
+.sorgu-form:focus{
+    box-shadow: none;
+    border-color:  #60A02A;
+    
+
+}
+.card1{
+   background-color: #f1f4ee;
+   border-radius:45px;
+   width: 690px;
+   padding: 30px;
+   height: 300px;
+   
+}
+.emanet-row{
+    padding-left: 28px;
+    margin-right: 29px;
+}
+.emanet-img{
+    margin-top: -6px;
+}
+.sorgu-sifariset{
+    background-color: #68a832  ;
+    color: white;
+    height: 45px;
+    width: 100px;
+    font-size: large;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+.row a:hover{
+    text-decoration: none;
+}
+.sorgu-header{
+    background-color:#f1f4ee ;
+    height: 26rem;
+    margin-right: 10px;
+    margin-left: 25px;
+    padding-left: 70px;
+    
+    
+    
+}
+.sorgu-int{
+    padding: 10px;
+}
+.universal{
+   background-image: url(https://www.rabitabank.com/resized/fit388x502/center/pages/19/deposits-banner2.jpg);
+   background-repeat: no-repeat;
+   height: 38rem;
+   border-radius: 14px;
+   margin-left: 46px;
+}
+.universal_text{
+    color: white;
+    padding:3rem;
+}
+.emanet_form{
+    ;

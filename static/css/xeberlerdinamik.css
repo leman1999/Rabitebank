@@ -1,0 +1,35 @@
+.dinamik_history{
+    background-color: #def4cd;
+    border-radius: 100px;
+    width: 110px;
+    padding: 2px;
+    text-align: center;
+}
+.dinamik_text{
+    background-color: #f1f4ee;
+    border-radius: 24px;
+    width: 100%;
+    padding: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Gilroy,sans-serif;
+
+}
+.dinamik_basliq{
+    width: 77%;
+}
+.dinamik{
+    margin: 80px 0 100px 220px;
+    font-weight: 600;
+    margin: 55px;
+}
+.dinamik-item::marker{
+    color:#60A02A  ;
+}
+.dinamik_img{
+    width: 100%;
+    height: 15rem;
+    border-radius: 20px;
+    
+    
+}

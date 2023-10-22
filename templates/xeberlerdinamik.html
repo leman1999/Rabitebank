@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/xeberlerdinamik.css') }}">
+{% endblock %}
+{% block content %}
+
+<div class="dinamik d-flex flex-column  ">
+    <img class="dinamik_img" src="{{xeber_detail.details_img}}" alt="">
+    <br>
+    <p class="small dinamik_history">{{xeber_detail.tarix}}</p>
+    <h4 class="dinamik_basliq" >{{xeber_detail.basliq}}</h4>
+    <div class="dinamik_text">
+        <p>{{xeber_detail.details}}</p>
+         
+    </div>
+</div>
+
+<br><br><br><br><br><br><br>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

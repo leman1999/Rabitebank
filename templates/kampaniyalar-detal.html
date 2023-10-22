@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% block title %}
+<title>Kampaniyalar detali - Rabitabank</title>
+{% endblock %}
+
+<div id="flexolan">
+    <section class="kompny_3">
+        <div class="s10">
+            <div class="s11">
+                <div class="s1">
+                    <div class="kompny_4">
+                        <img src="{{ kompaniyalar1.image }}" width="252" height="252">
+                    </div>
+                </div>
+                <div class="s3">
+                    <h1 class="kompny_5" style="margin-top: -5px;">
+                        {{ kompaniyalar1.name }}
+                    </h1>
+                    <p class="kompny_6"></p>
+                    <div class="kompny_7" style="margin-bottom: 5rem;">
+                        <div class="center_1_1" style="margin-bottom: 2rem; display: flex;">
+                            <ul class="kompny_9">
+                                <li><span style="color: #888; font-weight: 400; font-size: 13px;">
+                                    Başlanma vaxti</span><br><span>
+                                        {{ kompaniyalar1.date1 }}</span>
+                                </li>
+                                <li><span style="color: #888; font-weight: 400; font-size: 13px;">
+                                    Bitmə vaxti</span><br><span>
+                                        {{ kompaniyalar1.date2 }}</span> 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="kompny_1">
+                        <div class="kompny_2_arxaplan">
+                            {{ kompaniyalar1.comment }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

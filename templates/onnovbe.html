@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% block title %}
+<title>Oline növbə - Rabitabank</title>
+{% endblock %}
+
+<div id="flexolan">
+    <section>
+    <div class="s10">
+    <h1 class="novbe_1">Onlayn növbə</h1>
+    <div>
+        <div class="s11">
+                    <div class="s2">
+                        <div class="kartolan_1 text_1_2">
+                            
+            <form action="" method="POST" onsubmit="sifaris()">
+                            <div class="s11">
+                                <h2 class="novbe_2">Onlayn növbəyə yazil</h2>
+                                <p style="margin-bottom: 4rem; font-size: 17px; font-weight:300">
+                                    Gözləmədən rahat bankciliq  xidmətlərindən faydalanmaq üçün  
+                                    <br> onlayn növbə götürün.
+
+                                </p>        
+                {{ form.csrf_token }}
+                <div class="s2">
+                    <div class="novbe_3">
+                    <label>Filial seçin</label>
+                    {{ form.filial(class_='novbe_6') }}
+                    </div>
+                </div>
+                
+                <div class="s2">
+                    <div class="novbe_3">
+                    <label>Xidmət növü seçin</label>
+                        {{ form.xidmet_novu(class_='novbe_6') }}
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;" class="s2">
+                    <div class="novbe_3">
+                    <label>Tarixi seçin</label>
+                    {{ form.tarix(class_='novbe_6') }}
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;" class="s2">
+                    <div class="novbe_3">
+                    <label>Vaxti  seçin</label>
+                        {{ form.vaxt(class_='novbe_6') }}
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <div class="novbe_3 novbe_4">
+                    <label>Mobil nömrəniz</label>
+                    <div class="novbe_5">
+                        {{ form.mobil_nomre(class_='novbe_6', id='mobil_nomre') }}
+                    </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                    <div>
+                    <button type="submit" class="btn">Növbə götür</button>
+                    </div>
+                </div>
+            </form>
+                </div>
+                        </div>
+                    </div>
+                    <div class="s2">
+                        <div class="kartolan_1">
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACIJGTnFhgubRTZLAhFrbbin6ClFwXLbg&amp;language=az"></script>                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
+
+
+
+{% endblock %}

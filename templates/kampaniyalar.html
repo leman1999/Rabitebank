@@ -1,0 +1,60 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+{% block title %}
+<title>Kampaniyalar - Rabitabank</title>
+{% endblock %}
+
+<div id="flexolan">    
+    <section>
+      <div class="s10">
+        <h1 class="yazi1">Kampaniyalar</h1>
+        
+
+        <div class="row row-cols-6">
+          <div class="col">
+              <ul style="list-style-type:none">
+                  <p class="footer__title footer__title--clickable">Fərdi müştərilər</p>
+                  
+                      <a href="https://www.rabitabank.com/ferdi/kart-sifarisi-kartlar"></a>
+                  </a>
+                  <br>
+                  <a href="https://www.rabitabank.com/ferdi/kredit-sifarisi-kreditler">Kreditlər</a>
+                  <br>
+                  <a href="https://www.rabitabank.com/ferdi-musteriler/emanetler-az">Əmanətlər</a>
+                  
+                  <br>
+                  <a href="https://www.rabitabank.com/ferdi/onlayn-xidmetler">Onlayn xidmətlər</a>
+                  </a>
+                  <br>
+                  <a href="https://www.rabitabank.com/ferdi/kampaniyalar">Kampaniyalar</a>
+                  </a>
+               
+              </ul>
+            </div>
+        
+          {% for kampaniya in kompaniyalar %}
+            <div class="s2 {{ kampaniya.kategori }}">
+                <a href="/kampaniyalar/detal{{ kampaniya.id }}" class="kartolan_1 text_1_2">
+                    <div class="text_1_3">
+                        <span class="yazi4">{{ kampaniya.date }}</span>
+                        <span style="margin-top: 2rem; font-size: 16px !important; width: 200px !important; font-weight: 500 !important;" class="text_1_4">
+                            {{ kampaniya.name }}
+                        </span>
+                        <br>
+                    </div>
+                    
+                    <div class="text_1_image">
+                        <img src="{{ kampaniya.image }}" alt="" width="" height="196" />
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>     
+          
+      </div>
+    </section>
+  </div>
+
+{% endblock %}q
